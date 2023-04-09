@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    database : H2
+    show-sql: true
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        ddl : none
+  datasource:
+     url: jdbc:h2:mem:cafe_db
+     username: cafe_db_admin
+     password: cafe_db_admin
+     driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+         data-locations: classpath:user.sql
+
+
+springdoc:
+      swagger-ui:
+        path: /api/swagger.html
+      
+      api-docs:
+        path : /javainuse-openapi
+
+# server :
+#      port: 8081 
